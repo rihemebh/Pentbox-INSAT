@@ -1,6 +1,6 @@
 import getpass
 import re
-from phase1.userService import UserService
+from Authentication.userService import UserService
 
 
 def sign_up(userService: UserService):
@@ -10,13 +10,13 @@ def sign_up(userService: UserService):
     first_name = None
     last_name = None
     while not verif:
-        email = str(input("Entrer votre email: "))
+        email = str(input("Enter your email: "))
         # password = str(input("Entrer votre mot de passe: "))
         # password_confirmation = str(input("confirm your password : "))
         password = getpass.getpass("Enter your password: ")
         password_confirmation = getpass.getpass("Confirm your password: ")
         email_regex = r"\b[A-Za-z0-9]+\.[A-Za-z0-9]+@insat.ucar.tn\b"
-        if (re.fullmatch(email_regex, email) and password == password_confirmation and len(password) > 6):
+        if re.fullmatch(email_regex, email) and password == password_confirmation and len(password) > 6:
             verif = True
     first_name, last_name = email.split("@")[0].split(".")
     try:
@@ -27,9 +27,7 @@ def sign_up(userService: UserService):
         sign_up(userService=userService)
 
 
-
-
-def login(userService: UserService):
+def twoFactor(userService: UserService):
     email = None
     password = None
     while email is None and password is None:
@@ -42,3 +40,7 @@ def login(userService: UserService):
         print("Successfully logged in !")
     else:
         print("Wrong credentials!")
+
+
+def kerberos():
+    return None

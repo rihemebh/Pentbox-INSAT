@@ -3,4 +3,4 @@ Dear ${PERSON_NAME},
 This is your Verification code:  ${CODE}
 
 Yours Truly
-Pentbox team
+Pentbox INSAT team
