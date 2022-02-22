@@ -8,7 +8,7 @@ import sys
 
 
 class Client:
-    DISCONNECT_MESSAGE = "!DISCONNECT"
+    DISCONNECT_MESSAGE = "BYE"
     HASH_METOD = "MD5"
 
     def __init__(self, ADDR, username):
